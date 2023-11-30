@@ -38,7 +38,7 @@
                     <span class="modal-close" id="modalClose">&#10006;</span>
                 </header>
                 <form class="modal-form" id="ReaderForm" action="/php/process_form_reader.php" method="post">
-                    <input type="text" id="name" name="name" class="modal-field" placeholder="Name - Only letters allowed" pattern="^[A-Za-z\s]+$" required>
+                    <input type="text" id="name" name="name" class="modal-field" placeholder="Name - Only letters allowed" pattern="^[A-Za-z\s.]+$" required>
                     <input type="date" id="dob" name="dob" class="modal-field" placeholder="Date of Birth" required>
                     <input type="text" id="registration_code" name="registration_code" class="modal-field" placeholder="Registragion Code" required>
                     <input type="tel" id="phone" name="phone" class="modal-field" placeholder="Phone Number - Enter a valid 10-digit phone number" pattern="[0-9]{10}" required> 

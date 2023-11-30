@@ -47,7 +47,7 @@
                 </header>
                 <form class="modal-form" id="bookForm" action="/php/process_form_book.php" method="post">
                     <input type="text" id="title" name="title" class="modal-field" placeholder="Title" required>
-                    <input type="text" id="author" name="author" class="modal-field" placeholder="Author - Only letters allowed" pattern="^[A-Za-z\s]+$" required>
+                    <input type="text" id="author" name="author" class="modal-field" placeholder="Author - Only letters allowed" pattern="^[A-Za-z\s.,]+$" required>
                     <input type="text" id="edition" name="edition" class="modal-field" placeholder="Edition" required>
                     <input type="number" id="year" name="year" class="modal-field" placeholder="Publication year - Enter a valid year (e.g., 2023)" pattern="\d{4}" required>
                     <input type="text" id="genre" name="genre" class="modal-field" placeholder="Genre" required>
