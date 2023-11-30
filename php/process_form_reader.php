@@ -7,8 +7,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $rowIndex = $_POST["rowIndex"];
         
     
-        if (file_exists('data/readerData.json')) {
-            $existingData = json_decode(file_get_contents('data/readerData.json'), true);
+        if (file_exists('../data/readerData.json')) {
+            $existingData = json_decode(file_get_contents('../data/readerData.json'), true);
     
             if (array_key_exists($rowIndex, $existingData)) {
                 
@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
                 $existingData = array_values($existingData);
     
-                file_put_contents('data/readerData.json', json_encode($existingData));
+                file_put_contents('../data/readerData.json', json_encode($existingData));
     
                 header("Location: /forms/readers_form.html");
                 exit();
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $existingData = array();
 
         if (file_exists('data\readerData.json')) {
-            $existingData = json_decode(file_get_contents('data\readerData.json'), true);
+            $existingData = json_decode(file_get_contents('../data/readerData.json'), true);
         
             if (array_key_exists($rowIndex, $existingData)){
                 $existingData[$rowIndex]["name"] = $_POST["name"];
@@ -56,14 +56,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
         $existingData = array();
         if (file_exists('data\readerData.json')) {
-            $existingData = json_decode(file_get_contents('data\readerData.json'), true);
+            $existingData = json_decode(file_get_contents('../data/readerData.json'), true);
         }
     
         $existingData[] = $formData;
     
-        file_put_contents('data\readerData.json', json_encode($existingData));
+        file_put_contents('../data/readerData.json', json_encode($existingData));
     
-        header("Location: /forms/readers_form.html");
+        header("Location: ../forms/readers_form.html");
         exit();
     }
 }

@@ -7,8 +7,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $rowIndex = $_POST["rowIndex"];
         
     
-        if (file_exists('data/bookData.json')) {
-            $existingData = json_decode(file_get_contents('data/bookData.json'), true);
+        if (file_exists('../data/bookData.json')) {
+            $existingData = json_decode(file_get_contents('../data/bookData.json'), true);
     
             if (array_key_exists($rowIndex, $existingData)) {
                 
@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
                 $existingData = array_values($existingData);
     
-                file_put_contents('data/bookData.json', json_encode($existingData));
+                file_put_contents('../data/bookData.json', json_encode($existingData));
     
                 header("Location: /forms/books_form.html");
                 exit();
@@ -27,8 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $rowIndex = $_POST["rowIndex"];
         $existingData = array();
 
-        if (file_exists('data\bookData.json')) {
-            $existingData = json_decode(file_get_contents('data\bookData.json'), true);
+        if (file_exists('../data/bookData.json')) {
+            $existingData = json_decode(file_get_contents('../data/bookData.json'), true);
         
             if (array_key_exists($rowIndex, $existingData)){
                 $existingData[$rowIndex]["title"] = $_POST["title"];
@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $existingData[$rowIndex]["total"] = $_POST["total"];
                 $existingData[$rowIndex]["availables"] = $_POST["availables"];
 
-                file_put_contents('data\bookData.json', json_encode($existingData));
+                file_put_contents('../data/bookData.json', json_encode($existingData));
 
                 header("Location: /forms/books_form.html");
                 exit();
@@ -63,15 +63,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         );
     
         $existingData = array();
-        if (file_exists('data\bookData.json')) {
-            $existingData = json_decode(file_get_contents('data\bookData.json'), true);
+        if (file_exists('../data/bookData.json')) {
+            $existingData = json_decode(file_get_contents('../data/bookData.json'), true);
         }
     
         $existingData[] = $formData;
     
-        file_put_contents('data\bookData.json', json_encode($existingData));
+        file_put_contents('../data/bookData.json', json_encode($existingData));
     
-        header("Location: /forms/books_form.html");
+        header("Location: ../forms/books_form.html");
         exit();
     }
 }
