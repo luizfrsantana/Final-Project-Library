@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main_form.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="/scripts/books_form_script.js" defer></script>
+    
+    <title>Books</title>
+</head>
+<body>
+    <a href="/index.html" id="link-home"><button type="button"><img src="/img/book_registragion/home-page-icon.png" alt="Home" width="50px" height="50px"></button></a>
+    <header>
+        <h1 class="header-t">Books </h1>
+        
+    </header>
+    <main>
+        <button type="button" class="btn blue" id="bookRegistration"> Book Registration</button>
+        
+        <table class="records">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Edition</th>
+                    <th>Year</th>
+                    <th>Genre</th>
+                    <th>Publisher</th>
+                    <th>Pages</th>
+                    <th>ISBN</th>
+                    <th>Total</th>
+                    <th>Availables</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+
+        </table>
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <header class="modal-form">
+                    <h2>Book</h2>
+                    <span class="modal-close" id="modalClose">&#10006;</span>
+                </header>
+                <form class="modal-form" id="bookForm" action="/php/process_form_book.php" method="post">
+                    <input type="text" id="title" name="title" class="modal-field" placeholder="Title" required>
+                    <input type="text" id="author" name="author" class="modal-field" placeholder="Author - Only letters allowed" pattern="^[A-Za-z\s]+$" required>
+                    <input type="text" id="edition" name="edition" class="modal-field" placeholder="Edition" required>
+                    <input type="number" id="year" name="year" class="modal-field" placeholder="Publication year - Enter a valid year (e.g., 2023)" pattern="\d{4}" required>
+                    <input type="text" id="genre" name="genre" class="modal-field" placeholder="Genre" required>
+                    <input type="text" id="publisher" name="publisher" class="modal-field" placeholder="Publisher" required>
+                    <input type="number" id="pages" name="pages" class="modal-field" placeholder="Number of pages" min="1" required>
+                    <input type="text" id="isbn" name="isbn"  class="modal-field" placeholder="ISBN" required>
+                    <input type="number" id="total" name="total" class="modal-field" placeholder="Total of books" min="1" required>
+                    <input type="number" id="availables" name="availables" class="modal-field" placeholder="Total of availables" min="0" required>
+                    <input type="hidden" name="action" value="">
+                
+                <footer class="modal-footer">
+                    <button type="submit" class="btn green" id="modalSubmit">Salve</button>
+                    <span  class="btn blue cancel" id="modalCancel">Cancel</span>
+                </footer>
+            </form>
+            </div>
+
+
+        </div>
+    </main>
+    <footer>
+        CCTB
+    </footer>
+    
+</body>
+</html>

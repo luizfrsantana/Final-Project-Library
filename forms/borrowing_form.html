@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/borrowing_form.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="/scripts/borrowing_form.js" defer></script>
+    <title>Borrow</title>
+</head>
+
+<body>
+    <a href="/index.html" id="link-home"><button type="button"><img src="/img/book_registragion/home-page-icon.png" alt="Home" width="50px" height="50px"></button></a>
+    <header>
+        <h1 class="header-t">Books </h1>
+    </header>
+    <main>
+
+        <table class="records">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Edition</th>
+                    <th>Year</th>
+                    <th>Genre</th>
+                    <th>Publisher</th>
+                    <th>Pages</th>
+                    <th>ISBN</th>
+                    <th>Total</th>
+                    <th>Availables</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+
+        </table>
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <header class="modal-form">
+                    <h2>Book</h2>
+                    <span class="modal-close" id="modalClose">&#10006;</span>
+                </header>
+                <form class="modal-form" id="borrowingForm" action="/php/process_borrowing_form.php" method="post">
+                    <input type="text" id="title" name="title" class="modal-field" placeholder="Title" readonly>
+                    <input type="text" id="author" name="author" class="modal-field" placeholder="Author" readonly>
+                    <input type="text" id="edition" name="edition" class="modal-field" placeholder="Edition" readonly>
+                    <input type="number" id="year" name="year" class="modal-field"
+                        placeholder="Publication year - Enter a valid year (e.g., 2023)" pattern="\d{4}" readonly>
+                    <input type="text" id="genre" name="genre" class="modal-field" placeholder="Genre" readonly>
+                    <input type="text" id="publisher" name="publisher" class="modal-field" placeholder="Publisher"
+                        readonly>
+                    <input type="number" id="pages" name="pages" class="modal-field" placeholder="Number of pages"
+                        min="1" readonly>
+                    <input type="text" id="isbn" name="isbn" class="modal-field" placeholder="ISBN" readonly>
+                    <input type="number" id="total" name="total" class="modal-field" placeholder="Total of books"
+                        min="1" readonly>
+                    <input type="number" id="availables" name="availables" class="modal-field"
+                        placeholder="Total of availables" min="0" readonly>
+                    <label for="registrationCodeBorrowing">Reader Registration Code:</label>
+                    <input type="text" id="registrationCodeBorrowing" name="registrationCodeBorrowing" readonly>
+                    <input type="hidden" name="action" value="">
+
+                    <footer class="modal-footer">
+                        <button class="btn" id="modal-borrow">Borrow</button>
+                        <button class="btn red cancel" id="modal-cancel" type="button">Cancel</button>
+                    </footer>
+                </form>
+            </div>
+
+
+        </div>
+    </main>
+    <footer>
+        CCTB
+    </footer>
+
+</body>
+
+</html>

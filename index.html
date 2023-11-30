@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="scripts/index.js" defer></script>
+</head>
+
+<body>
+    <div id="modal-sign-in" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="registrationForm">
+                <label for="registrationCode">Enter your registration code:</label>
+                <input type="text" id="registrationCode" name="registrationCode" required>
+                <button type="button" id="signInBtn">Sign in</button>
+                <button type="button" id="cancelBtn">Cancel</button>
+            </form>
+        </div>
+    </div>
+    <table>
+        <table boder="1">
+            <tr>
+                <td colspan="5" id="search">
+                    <label for="search-by-option" id="search-bar">Search </label>
+                    <select id="search-by-option" name="source" required="required">
+                        <option value="title" selected="selected">Book Title</option>
+                        <option value="author">Book Author</option>
+                        <option value="isbn">Book ISBN</option>
+                        <option value="publisher">Book Publisher</option>
+                    </select>
+                    <input type="text" id="search-term">
+                    <button id="search-button">&#128269;</button>
+                </td>
+            </tr>
+            <tr>
+                <td><button id="btn_/forms/books_form"><img src="img/index/stack-of-books.png"
+                            alt="Book registration"></button><br>Books</td>
+                <td><button id="btn_/forms/readers_form"><img src="img/index/register.png"
+                            alt="Reader registration"></button><br>Readers</td>
+                <td><button id="sign-in-btn"><img src="img/index/loan.png"
+                            alt="Book Borrowing Registration"></button><br>Sign in</td>
+                <td><button id="btn_/forms/charts"><img src="img/index/pie-chart.png"
+                            alt="Charts"></button><br>Chart</td>
+            </tr>
+        </table>
+        <div id="reader-data" style="display: none;">
+            <label for="reader-name">Name: </label>
+            <input type="text" id="reader-name" readonly><br>
+            <label for="registration-code">Registration Code: </label>
+            <input type="text" id="registration-code" readonly>
+        </div>
+</body>
+
+</html>
