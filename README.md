@@ -21,6 +21,15 @@ Contains the PHP code responsible for the back-end functionality of the applicat
 5. scripts
 Includes JavaScript and jQuery code used throughout the application for enhanced interactivity.
 
+6. Data
+"data/borrowingData.json":
+Use this path if the file is in the current directory or a subdirectory named "data" within the current directory.
+
+"../data/borrowingData.json":
+Use this path if the file is in a directory named "data" one level above the current directory.
+
+Choose the appropriate path based on your project structure, ensuring that your file paths are relative to the location where your code is executed. Relative paths enhance code portability, allowing it to be moved across directories without needing to adjust file paths.
+
 Getting Started
 To begin, make sure to set up a PHP server and navigate to the Index page. From there, you can explore the various features and functionalities provided by the library web application.
 
